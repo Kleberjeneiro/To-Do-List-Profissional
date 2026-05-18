@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskPro | To-Do List Profissional</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="login-card" id="loginScreen">
+      <div class="brand">
+        <span class="logo">✓</span>
+        <div>
+          <h1>TaskPro</h1>
+          <p>Organize as suas tarefas com praticidade.</p>
+        </div>
+      </div>
+
+      <form id="loginForm">
+        <label for="username">Nome de utilizador</label>
+        <input type="text" id="username" placeholder="Ex: Kleber" required />
+
+        <label for="password">Palavra-passe</label>
+        <input type="password" id="password" placeholder="Digite qualquer senha" required />
+
+        <button type="submit">Entrar</button>
+      </form>
+
+      <small>Projeto demonstrativo: login salvo no LocalStorage.</small>
+    </section>
+
+    <section class="dashboard hidden" id="dashboard">
+      <aside class="sidebar">
+        <div class="brand small">
+          <span class="logo">✓</span>
+          <div>
+            <h2>TaskPro</h2>
+            <p id="userGreeting">Olá!</p>
+          </div>
+        </div>
+
+        <button class="theme-btn" id="themeToggle">🌙 Modo escuro</button>
+
+        <div class="stats">
+          <div>
+            <strong id="totalTasks">0</strong>
+            <span>Total</span>
+          </div>
+          <div>
+            <strong id="doneTasks">0</strong>
+            <span>Concluídas</span>
+          </div>
+          <div>
+            <strong id="pendingTasks">0</strong>
+            <span>Pendentes</span>
+          </div>
+        </div>
+
+        <button class="logout" id="logoutBtn">Sair</button>
+      </aside>
+
+      <section class="content">
+        <header class="header">
+          <div>
+            <h1>Minhas tarefas</h1>
+            <p>Arraste as tarefas para alterar a ordem.</p>
+          </div>
+        </header>
+
+        <form class="task-form" id="taskForm">
+          <input type="text" id="taskInput" placeholder="Digite uma nova tarefa" required />
+          <select id="categoryInput">
+            <option value="Estudos">Estudos</option>
+            <option value="Trabalho">Trabalho</option>
+            <option value="Pessoal">Pessoal</option>
+            <option value="Urgente">Urgente</option>
+          </select>
+          <button type="submit">Adicionar</button>
+        </form>
+
+        <div class="filters">
+          <button class="filter active" data-filter="Todas">Todas</button>
+          <button class="filter" data-filter="Estudos">Estudos</button>
+          <button class="filter" data-filter="Trabalho">Trabalho</button>
+          <button class="filter" data-filter="Pessoal">Pessoal</button>
+          <button class="filter" data-filter="Urgente">Urgente</button>
+        </div>
+
+        <ul class="task-list" id="taskList"></ul>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
